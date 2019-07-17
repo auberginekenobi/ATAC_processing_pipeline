@@ -9,6 +9,3 @@ qsub calculateFRiP MB274_peaks_wgs_control.bed MB274.chr1-22xy.bam
 
 Files located in /broad/medullo/ATACseq_fraenkel/macs2_hg19/macs2_subcommands
 
-TODO
-subcommands should really use MBXXX.chr1-22xy.bam instead of MBXXX.nodup.bam
-
