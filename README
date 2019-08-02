@@ -1,11 +1,13 @@
 USAGE
 
+qsub trimmomatic.sh /broad/medullo/ATACseq_fraenkel/MB106_Group3_G3a_BATCH1-Concat_2runs.fastq.fastqcssanger MB106c
 qsub bowtie2_align_ATAC_fastqs.sh MB274_SHH_SHHa_BATCH3-170809Fra_D17-6964.fastq MB274.sam
 qsub samtools_view_sort.sh MB274.sam
 qsub picard_markduplicates.sh MB274.sorted.bam MB274
 qsub samtools_removechrm.sh MB274
-qsub subcommands.sh MB274
+qsub subcommands.sh MB106 MB106c
 qsub calculateFRiP MB274_peaks_wgs_control.bed MB274.chr1-22xy.bam
+qsub -j y tss_enrichment.sh MB275.chr1-22xy.bam MB275 50
 
 Files located in /broad/medullo/ATACseq_fraenkel/macs2_hg19/macs2_subcommands
 

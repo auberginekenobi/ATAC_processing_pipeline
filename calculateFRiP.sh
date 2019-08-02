@@ -10,6 +10,8 @@
 # Runtime
 #$ -l h_rt=00:30:00
 
+#$ -j y
+
 ##################
 ### Run script ###
 ##################
@@ -30,5 +32,5 @@ echo $1
 
 awk 'BEGIN{OFS="\t"} FNR>1 {print $1":"$2+1"-"$3, $1, $2+1, $3, "."}' "${PEAKS}/${1}" > "${PEAKS}/${1}.saf"
 ## run featureCounts
-featureCounts -p -a "${PEAKS}/${1}.saf" -F SAF -o "${FRIP}/${1}" "${BAM}/${2}" -T 4
-#rm "${PEAKS}/${1}.saf"
+featureCounts -a "${PEAKS}/${1}.saf" -F SAF -o "${FRIP}/${1}" "${BAM}/${2}" -T 4
+rm "${PEAKS}/${1}.saf"
