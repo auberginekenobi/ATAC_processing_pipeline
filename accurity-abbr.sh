@@ -8,14 +8,14 @@
 #$ -l os=RedHat7
 
 # Memory per core
-#$ -l h_vmem=4G
+#$ -l h_vmem=2G
 # Parallel cores
-#$ -pe smp 8
+#$ -pe smp 4
 #$ -R y
-#$ -binding linear:8
+#$ -binding linear:4
 
 # Runtime
-#$ -l h_rt=06:00:00
+#$ -l h_rt=01:30:00
 # MB018 took 5+ hours
 
 # Output
@@ -50,11 +50,10 @@ singularity exec \
 	$ATAC/accurity/accurity-dev.simg \
 /usr/local/Accurity/main.py \
 	-c $ATAC/accurity/configure \
-	--nCores 8 \
+	--nCores 4 \
 	-t $ATAC/WGS/${1}_tumor.bam \
 	-n $ATAC/WGS/${1}_control.bam \
 	-o $OUT \
 	--snp_output_dir $OUT \
-	-d 1 --clean 1
+	-d 1 -s 4
 
-rm -r $OUT/workspace
