@@ -37,18 +37,23 @@ source $HOME/.my.bashrc
 source activate cnvkit
 
 ATAC=/broad/medullo/ATACseq_fraenkel
+OUT=$ATAC/cnvkit/${1}
 
 cnvkit.py batch $ATAC/WGS/${1}_tumor.bam\
-	-n $ATAC/WGS/${1}_control.bam\
+#	-n $ATAC/WGS/${1}_control.bam\
+	-r $ATAC/cnvkit/pooled_reference.cnn\
 	-m wgs\
 	-f $ATAC/genomes/Homo_sapiens_assembly19.fasta\
-	-d $ATAC/cnvkit/${1}\
+	-d $OUT\
 	--scatter --diagram\
 	-p 8\
 	--target-avg-size 1000\
 	-g $ATAC/cnvkit/Homo_sapiens_assembly19.access.bed
 #	-t $ATAC/cnvkit/Homo_sapiens_assembly19.target.1000.bed
 #	-a $ATAC/cnvkit/Homo_sapiens_assembly19.antitarget.1000.bed
+
+cnvkit.py scatter $OUT/${1}_tumor.cnr -s $OUT/${1}_tumor.cns -o $OUT/${1}_tumor-scatter.png
+# diagram can only generate pdf
 
 conda deactivate
 

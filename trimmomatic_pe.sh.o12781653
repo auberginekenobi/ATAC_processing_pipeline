@@ -1,0 +1,5 @@
+TrimmomaticPE: Started with arguments:
+ /broad/medullo/ATACseq_fraenkel/controls/SRR6956273/SRR6956273/SRR6956273_pass_1.fastq.gz /broad/medullo/ATACseq_fraenkel/controls/SRR6956273/SRR6956273/SRR6956273_pass_2.fastq.gz /broad/medullo/ATACseq_fraenkel/controls/SRR6956273/SRR6956273/xk_granule_paired_1.fastq /broad/medullo/ATACseq_fraenkel/controls/SRR6956273/SRR6956273/xk_granule_unpaired_1.fastq /broad/medullo/ATACseq_fraenkel/controls/SRR6956273/SRR6956273/xk_granule_paired_2.fastq /broad/medullo/ATACseq_fraenkel/controls/SRR6956273/SRR6956273/xk_granule_unpaired_2.fastq LEADING:15 TRAILING:15
+Quality encoding detected as phred33
+Input Read Pairs: 55766208 Both Surviving: 55766011 (100.00%) Forward Only Surviving: 197 (0.00%) Reverse Only Surviving: 0 (0.00%) Dropped: 0 (0.00%)
+TrimmomaticPE: Completed successfully
